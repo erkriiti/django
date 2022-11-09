@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>LoginForm</title>
+</head>
+<body>
+	<h2><form action="" method="POST" novalidate>
+		{% csrf_token %}
+		{% for x in form %}
+		{{x.label_tag}} {{x}} {{x.errors|striptags}}<br> <br>
+		{% endfor %}
+       
+ <input type="submit" value="Login">
+</form> 
+<button><a href="{% url 'signup' %}">SignUp</a></button><br> <br>
+	{% if form.non_field_errors %}
+		  {% for error in form.non_field_errors %}
+		  {{error}}
+		  {% endfor %}
+		{% endif %}
+
+</h2>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Change Password with old password</title>
+</head>
+<body>
+<h2>
+	<form action="" method="POST">
+		{% csrf_token %}
+
+		{% if form.non_field_errors %}
+		  {% for error in form.non_field_errors %}
+		  {{error}}
+		  {% endfor %}
+		{% endif %}
+{% for fm in form %}
+		  {{fm.label_tag}} {{fm}} {{fm.errors|striptags}} <br><br>
+		{% endfor %}
+		<input type="Submit" value="Save">
+</form>
+</h2>
+</body>
+</html>

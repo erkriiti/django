@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Change Password with old password</title>
+</head>
+<body>
+<h2>
+	<form action="" method="POST">
+		{% csrf_token %}
+
+		{{form.as_p}}
+		<input type="Submit" value="Save">
+</form>
+</h2>
+</body>
+</html>
